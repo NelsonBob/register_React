@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Dialog from '@mui/material/Dialog';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+
+export class Success extends Component {
+  continue = e => {
+    e.preventDefault();
+    // PROCESS FORM //
+    this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
+  render() {
+    return (
+      
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar>Success</AppBar>
+            <h1>Thank You For Your Submission</h1>
+            <p>You will get an email with further instructions.</p>
+          </Dialog>
+        </>
+      
+    );
+  }
+}
+
+export default Success;
